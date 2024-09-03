@@ -37,7 +37,7 @@ namespace Structure
 
         public void SetNext(Node next)
         {
-            this.Next = next;   // set method
+            this.Next = null;   // set method
         }    
     }
 }

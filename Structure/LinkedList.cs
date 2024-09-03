@@ -12,6 +12,7 @@ namespace Structure
     {
 
         public Node head;
+        //public int data;
 
         public LinkedList()
         {
@@ -20,28 +21,39 @@ namespace Structure
 
         public LinkedList(int data)
         {
-
+            this.head = head;
         }
 
         // Method to add to  the end of the list
         public void Add(int data)
         {
-            Node head = new Node(data);
+            if (this.head == null)
+            {
+                this.head = new Node(data);
+                this.head.SetValue(data);
+                //this.head.SetNext(data);
+
+            }
+            //Node head = new Node(data);
             //Node temp = head.GetNext(); 
             while (head.GetNext != null)
             {
-                head = head.GetNext();
+                Node head = new Node(data);
+                
+                head.SetValue(data);
+
+                //head = head.GetNext();
             }
 
         }
 
 
-        public String Display()
-        {
-            1-> 2-> 5-> - 5-> 5
-        }
+        //public String Display()
+        //{
+        //    1-> 2-> 5-> - 5-> 5
+        //}
 
-        public int Length()
+        //public int Length()
 
         // Method to remove the first value
         public void RemoveValue(int data)
@@ -62,15 +74,15 @@ namespace Structure
         }
 
         // Method to find by value and return index
-        public int Find(data)
-        {
+        //public int Find(data)
+        //{
 
-        }
+        //}
 
         // Method to get a value by  index and return the value
-        public int Get(data)
-        {
+        //public int Get(data)
+        //{
 
-        }
-    }
+        //}
+    } }
 
