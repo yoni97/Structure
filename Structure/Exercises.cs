@@ -31,7 +31,7 @@ namespace Structure
             {
                 return x;
             }
-            return x % 10 + SumOfDigit(x / 10); 
+            return x % 10 + SumOfDigit(x / 10);
         }
 
         //ex3
@@ -41,7 +41,7 @@ namespace Structure
             {
                 return 1;
             }
-            if( x == 1)
+            if (x == 1)
             {
                 return y;
             }
@@ -64,15 +64,18 @@ namespace Structure
         }
 
         //ex5
-        public static int FindSum(int[] array, int num)
+        public static int FindSum(int[] array, int size)
         {
             int Sum = 0;
-            if (num == 0)
+            if (size == 0)
             {
-                return num;
+                return array[size];
             }
-            return (Sum + array[num]) + FindSum(array, num -1);
+            return (Sum + array[size]) + FindSum(array, size - 1);
         }
+
+        //ex6
+        //public static
 
     }
 }
