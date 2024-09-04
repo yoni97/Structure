@@ -11,12 +11,12 @@ namespace Structure
     {
         public Node head {  get; set; }
 
-        public int Count { get; set; }
+        public int count { get; set; }
 
         public Stack(Node head)
         {
             this.head = null;
-            this.Count = 0;
+            this.count = 0;
         }
 
         public bool IsEmpty()
@@ -24,36 +24,51 @@ namespace Structure
             return this.head == null;
         }
 
-        public void push(int node)
+        public void push(int data)
         {
-            Node? newNode = new Node(node);
-            if (head == null)
-            {
-                head = newNode;
-            }
-            newNode.setNext(head); 
+            Node? newNode = new Node(data);
+            if (head != null)
+                newNode.setNext(head); 
+            head = newNode;
+            count++;
         }
 
-        public void pop()
+        public int pop()
+        {
+        if (IsEmpty())
+            {
+                return -1;
+            }
+        int node = head.getValue();
+        head = head.getNext();
+        count--;
+        return node;
+
+        }
+
+        public int? Peak()
         {
             if (IsEmpty())
             {
-                return;
+                return null;
             }
-            head = head.getNext();
+            else
+            {
+                return head.getValue();
+            }
         }
 
-        public int Peek()
+        public int Count()
         {
-
+            return count;
         }
 
-
-
-        //public int Count()
+        //public string Display()
         //{
-        //    return c
+        //    return "";
         //}
+
+        
 
     }
 }

@@ -75,7 +75,7 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine(FindSum([6, 4, 2, 8, 1], 4));
+        //Console.WriteLine(FindSum([6, 4, 2, 8, 1], 4));
 
 
         int totalTests = 0;

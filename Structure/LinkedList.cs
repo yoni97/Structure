@@ -95,30 +95,11 @@ namespace Structure
         }
 
 
-        //O(n)
-        // Method to remove the first value
-        public void RemoveValue(int data)
-        {
-            if (Head == null)
-            { 
-                return;
-            }
-            Node node = Head;
-            
-            while (node.getNext() != null)
-            {
-                if (node.getNext().getValue() == data)
-                {
-                    node.setNext(node.getNext().getNext());
-                    return;
-                }
-                node = node.getNext();
-            }
-        }
+   
 
 
         //O(n)
-        public void removeValue(int value)
+        public void RemoveValue(int value)
         {
             if (Head != null)
             {
