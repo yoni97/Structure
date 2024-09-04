@@ -42,6 +42,7 @@ namespace Structure
         }
 
         // Method to add to  the end of the list
+        //O(n)
         public void Add(int data)
         {
             Node newNode = new Node(data);
@@ -61,7 +62,7 @@ namespace Structure
             return;
         }
 
-
+        //O(n)
         public string Display()
         {
             if (Head == null)
@@ -77,6 +78,7 @@ namespace Structure
             return result;
         }
 
+        //O(n)
         public int Length()
         {
             if (Head == null)
@@ -91,9 +93,9 @@ namespace Structure
             }
             return count;
         }
-        
 
-            
+
+        //O(n)
         // Method to remove the first value
         public void RemoveValue(int data)
         {
@@ -114,6 +116,8 @@ namespace Structure
             }
         }
 
+
+        //O(n)
         public void removeValue(int value)
         {
             if (Head != null)
@@ -140,8 +144,7 @@ namespace Structure
 
 
         // Method to remove the first value
-
-
+        //O(n)
         public void RemoveAllValues(int value)
         {
             if (Head == null)
@@ -160,6 +163,7 @@ namespace Structure
 
 
         // Method to remove the value in an index
+        //O(n)
         public void RemoveIndex(int index)
         {
             if (Head == null)
@@ -181,6 +185,7 @@ namespace Structure
         }
 
         // Method to find by value
+        //O(n)
         public int Find(int data)
         {
             if (Head == null)
@@ -201,24 +206,23 @@ namespace Structure
         }
 
         // Method to get a value by  index
-        
-
-        public int Get(int index)
+        //O(n)
+        public int Get(int data)
         {
-            Node temp = Head;
-            for (int i = 0; i < index; i++)
+            Node node = Head;
+            for (int i = 0; i < data; i++)
             {
-                if (temp == null)
+                if (node == null)
                 {
                     return -1;
                 }
-                temp = temp.getNext();
+                node = node.getNext();
             }
-            if (temp == null)
+            if (node == null)
             {
                 return -1;
             }
-            return temp.getValue();
+            return node.getValue();
         }
     }
 }
