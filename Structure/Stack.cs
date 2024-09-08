@@ -7,7 +7,7 @@ using System.Xml.Linq;
 
 namespace Structure
 {
-    internal class Stack
+    public class Stack
     {
         public Node head {  get; set; }
 
@@ -63,12 +63,23 @@ namespace Structure
             return count;
         }
 
-        //public string Display()
-        //{
-        //    return "";
-        //}
+        public string Display()
+        {
+            if (!IsEmpty())
+            {
+                return "";
+            }
+            Node node = head.getNext();
+            string result = head.getValue().ToString();
+            while (node != null)
+            {
+                result += " -> " + node.getValue().ToString();
+                node = node.getNext();
+            }
+            return result;
+        }
 
-        
+
 
     }
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace Structure
 {
@@ -40,18 +41,21 @@ namespace Structure
             count++;
         }
 
-        public int Dequeue()
+        public int? Dequeue()
         {
             int node = Head.getValue();
             if (IsEmpty())
             {
-                return -1;
+                return null;
             }
             Head = Head.getNext();
-            
             count--;
+            if (Head == null)
+            {
+                Tail = null;
+            }
             return node;
-        } 
+        }
 
         public int? Peek()
         {
@@ -65,6 +69,23 @@ namespace Structure
         public int Count()
         {
             return count;
+        }
+
+        public string Display()
+        {
+            if (IsEmpty())
+            {
+                return "";
+            }
+            Node node = Head.getNext();
+            string result = Head.getValue().ToString();
+            while (Tail != Head)
+            {
+                result += " -> " + node.getValue().ToString();
+                node = node.getNext();
+            }
+            return result;
+
         }
        
 
